@@ -1,0 +1,9 @@
+table{
+	margin : auto;
+    width : 80%;
+}
+
+table:hover{
+    transition: all 2s;
+    transform: rotate(360deg) scale(1.3) skew(22);
+}
