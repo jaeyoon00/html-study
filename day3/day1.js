@@ -22,3 +22,4 @@ for(var i = 0; i<10; i++){
 // console.log(i, number10);
 var number = 20;
 console.log(i, number);
+// let const
