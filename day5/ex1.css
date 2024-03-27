@@ -1,0 +1,9 @@
+.box{
+    height: 100vh;
+}
+
+.up{
+    display: fixed;
+    height: 90vh;
+    margin-left: 90vm;
+}
