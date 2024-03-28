@@ -61,3 +61,6 @@ const isAdult = ({name, age, ...rest}) => {
 const 이수진 = makePerson("이수진",20);
 isAdult(이수진.name, 이수진.age);
 console.log(isAdult(obj2));
+
+// mongo veu , oracle
+// elk next, postgre
