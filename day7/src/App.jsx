@@ -3,6 +3,9 @@ import "./App.css";
 import Box from "./components/Box";
 import Person from "./components/Person";
 import Boxs from "./components/Boxs";
+import Persons from "./components/Persons"; 
+import Counter from "./components/counter";
+
 // import java.util.List;
 // html 태그를 리턴하는 파일을 jsx
 //                        csr client side render ssr server side render
@@ -14,15 +17,11 @@ function App() {
 
   const [age, setAge] = useState(10);
   return (
-    <div className="App">
-      <input type="number" onChange={(e) => setAge(e.target.value)} />
-      <br />
-      <Person age={age} />
-      <Person age={age} />
-      <Person age={age} />
-      <Boxs />
+    <div className="App"> 
+    <Counter />
+    <Persons />
     </div>
   );
-}
+};
 
 export default App;
