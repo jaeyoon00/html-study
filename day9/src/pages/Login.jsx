@@ -1,33 +1,31 @@
 import { useNavigate } from "react-router-dom";
-import { register } from "../api/auth";
+import { login, register } from "../api/auth";
 import Article from "../atom/Article";
 import Button from "../atom/Button";
 import Input from "../atom/Input";
 import Label from "../atom/Label";
-import { useState } from "react";
 
 // Signup.jsx
 // npm i axios
 // fetch
-const Signup = () => {
+const Login = () => {
   const navigate = useNavigate();
-  const [message, setMessage] = useState("");
   const onSubmit = async (e) => {
     e.preventDefault();
     const name = document.getElementById("name").value;
     const password = document.getElementById("password").value;
-    try {
-      const res = await register({ name, password });
-      if (res.status === 201) navigate("/login");
-    } catch (error) {
-      setMessage(error.response.data);
+    const res = await login({ name, password });
+    if (res.status === 200) {
+      localStorage.setItem("id", res.data.id);
+      navigate("/board");
     }
+    // Storage cookie localStorage 써야하는 이유
+    console.log(res);
   };
 
   return (
     <div className="container">
       <Article>
-        <p>{message}</p>
         <form onSubmit={onSubmit}>
           <Label htmlFor="name">name</Label>
           <Input id="name" required />
@@ -41,4 +39,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;
